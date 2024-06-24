@@ -1,0 +1,10 @@
+Detector/x64/
+Detector/Detector.opensdf
+Detector/Detector.sdf
+Detector/Detector.v12.suo
+Detector/error_per_sector.png
+Detector/extraDetected_per_sector.png
+Detector/notDetected_per_sector.png
+SVM_training/x64/
+Detector/configuration.yml
+Detector/gridParams.yml

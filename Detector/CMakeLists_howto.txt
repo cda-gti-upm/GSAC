@@ -1,0 +1,25 @@
+CMAKELISTS INSTRUCTIONS - HOW TO CREATE A VISUAL STUDIO PROJECT GIVEN THE PROVIDED SOURCE FILES
+------------------------------------------------------------------------------------------------
+A CMakelists.txt is provided to ease the process of generating a Visual Studio solution for the project*. Using this file within CMake allows
+to automatically configure all the project options, including external linked libraries such as OpenCV, providing better portability.
+
+1.1. Install OpenCV library by compiling your own binaries (minimum required 2.4.8, but recommended latest from 2.4 branch)
+	1.1.1. Go to https://github.com/Itseez/opencv/tree/2.4 and click on "Download ZIP"
+	1.1.2. Extract the files, and put them inside a folder called "sources"
+	1.1.3. Download, install and open (in GUI) CMake (https://cmake.org/download/)
+	1.1.4. Set "sources" folder as folder containing sources. Set another directory to contain build (e.g. opencv/sources; opencv/build)
+	1.1.5. Click on configure. Set desired options. Click on configure again. Click on generate
+	1.1.6. Go to build directory, and open and compile OpenCV solution in Visual Studio
+1.2. Open CMake-gui
+1.3. Choose as source directory the one containing the sources (it must include the file CMakelists.txt)
+1.4. Choose an output build directory
+1.5. Click on configure. Choose default compiler for your machine.
+1.6. A message saying it didn't find OpenCV library is likely to appear. Follow instructions to solve the error:
+	1.6.1. Edit the OpenCV_DIR value, and set it to the OpenCV build folder (it must contain a file name opencv-config.cmake or OpenCVConfig.cmake)
+	1.6.2. Click on configure again to check the error is solved
+1.7. Click on generate. A solution file is generated on the project build folder
+1.8. Open solution with Visual Studio, and compile it. To run the main() function, the SGFC_detector project must be set as startup project
+     (in Visual Studio, on the Solution Explorer, right-click on SGFC_detector project, and choose Set as Startup project).
+1.9. There is no need for any further configuration. All the necessary files are already linked/included within the project.
+
+*Note: The file CMakelists.txt can be used in CMake to generate proper binaries/solutions on other platforms (Linux).
